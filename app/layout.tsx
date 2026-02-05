@@ -25,8 +25,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
+        <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="/" className="text-xl font-bold tracking-tight flex items-center gap-2">
+              <div className="bg-primary text-primary-foreground p-1 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5c0-2 2-2 2-2" /></svg>
+              </div>
+              My Tech Blog
+            </a>
+            <nav className="flex items-center gap-4">
+              <a href="/new" className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90">
+                Post Article
+              </a>
+            </nav>
+          </div>
+        </header>
         {children}
       </body>
     </html>
